@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceuh05uv2ofav"]
+
+[ext_resource type="Texture2D" uid="uid://b48b7kxap77tj" path="res://assets/textures/settings.png" id="1_x2hje"]
+[ext_resource type="AudioStream" uid="uid://cymhp1cyjsjmn" path="res://assets/songs/my freaking dissociation - necronyx1.wav" id="3_3ykye"]
+[ext_resource type="Script" uid="uid://cf3x0rmnmc7y6" path="res://scripts/no_sound_button.gd" id="3_71mqq"]
+[ext_resource type="AudioStream" uid="uid://4xc8dda3hybw" path="res://assets/songs/sceneswitch.wav" id="4_3j6r5"]
+[ext_resource type="Script" uid="uid://cxyuba3b0wyso" path="res://scripts/audiozvuki.gd" id="4_gc0em"]
+[ext_resource type="Script" uid="uid://3wcgisi0qyax" path="res://scripts/audio_stream_player.gd" id="5_cj1lu"]
+
+[node name="Settings" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.5, 324.00003)
+scale = Vector2(0.6036458, 0.60555553)
+texture = ExtResource("1_x2hje")
+
+[node name="Panel" type="Panel" parent="Sprite2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HSlider" type="HSlider" parent="Sprite2D/Panel"]
+layout_mode = 0
+offset_left = -738.01556
+offset_top = -391.37622
+offset_right = -433.201
+offset_bottom = -173.39458
+page = 1.0
+value = 99.0
+script = ExtResource("4_gc0em")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 14.0
+offset_top = 139.0
+offset_right = 123.0
+offset_bottom = 162.0
+text = "Music Volume"
+
+[node name="menu" type="Button" parent="."]
+offset_left = 978.0
+offset_top = 9.0
+offset_right = 1140.0
+offset_bottom = 87.0
+text = "Back to menu
+"
+script = ExtResource("3_71mqq")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="menu"]
+stream = ExtResource("4_3j6r5")
+volume_db = -8.588
+script = ExtResource("5_cj1lu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3ykye")
+volume_db = -10.259
+autoplay = true
+script = ExtResource("5_cj1lu")
+
+[connection signal="pressed" from="menu" to="menu" method="_on_pressed"]

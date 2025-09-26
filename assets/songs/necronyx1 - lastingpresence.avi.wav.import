@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnr144ecewhcm"
+path="res://.godot/imported/necronyx1 - lastingpresence.avi.wav-350d72b6edd8be81087b6c26f3bce9eb.sample"
+
+[deps]
+
+source_file="res://assets/songs/necronyx1 - lastingpresence.avi.wav"
+dest_files=["res://.godot/imported/necronyx1 - lastingpresence.avi.wav-350d72b6edd8be81087b6c26f3bce9eb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
