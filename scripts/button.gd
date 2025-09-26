@@ -9,5 +9,5 @@ func _on_pressed() -> void:
 	click_sound.volume_linear = _vol
 	print("click from " + name)
 	click_sound.play()
-	get_tree().change_scene_to_file("res://" + name.to_lower() + ".tscn")
+	get_tree().change_scene_to_file("res://scenes/" + name.to_lower() + ".tscn")
 	

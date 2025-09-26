@@ -17,15 +17,15 @@ script = ExtResource("1_i6lef")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_ouk20")
-position = Vector2(576.24994, 324.99997)
-scale = Vector2(0.59869796, 0.6000001)
+position = Vector2(962, 540.00006)
+scale = Vector2(1.0041667, 1.0055554)
 texture = ExtResource("2_70i5f")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 18.0
-offset_top = 284.0
-offset_right = 210.0
-offset_bottom = 373.0
+offset_left = 26.0
+offset_top = 612.0
+offset_right = 218.0
+offset_bottom = 701.0
 icon = ExtResource("3_mj5lg")
 
 [node name="Button" type="Button" parent="Button"]

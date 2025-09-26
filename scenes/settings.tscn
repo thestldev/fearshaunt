@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceuh05uv2ofav"]
+[gd_scene load_steps=8 format=3 uid="uid://ceuh05uv2ofav"]
 
 [ext_resource type="Texture2D" uid="uid://b48b7kxap77tj" path="res://assets/textures/settings.png" id="1_x2hje"]
 [ext_resource type="AudioStream" uid="uid://cymhp1cyjsjmn" path="res://assets/songs/my freaking dissociation - necronyx1.wav" id="3_3ykye"]
@@ -6,43 +6,50 @@
 [ext_resource type="AudioStream" uid="uid://4xc8dda3hybw" path="res://assets/songs/sceneswitch.wav" id="4_3j6r5"]
 [ext_resource type="Script" uid="uid://cxyuba3b0wyso" path="res://scripts/audiozvuki.gd" id="4_gc0em"]
 [ext_resource type="Script" uid="uid://3wcgisi0qyax" path="res://scripts/audio_stream_player.gd" id="5_cj1lu"]
+[ext_resource type="Script" uid="uid://dlwkg3370dic3" path="res://scripts/controlsettingssceneeslichto.gd" id="7_83j8s"]
 
 [node name="Settings" type="Node2D"]
+position = Vector2(388, 176)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577.5, 324.00003)
-scale = Vector2(0.6036458, 0.60555553)
+position = Vector2(572.25, 365.49997)
+scale = Vector2(1.0023438, 1.0046296)
 texture = ExtResource("1_x2hje")
 
-[node name="Panel" type="Panel" parent="Sprite2D"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HSlider" type="HSlider" parent="Sprite2D/Panel"]
-layout_mode = 0
-offset_left = -738.01556
-offset_top = -391.37622
-offset_right = -433.201
-offset_bottom = -173.39458
+[node name="HSlider" type="HSlider" parent="Sprite2D"]
+anchors_preset = -1
+anchor_left = -1.8582627
+anchor_top = -1.4510788
+anchor_right = -1.8582627
+anchor_bottom = -1.4510788
+offset_left = 2755.5183
+offset_top = 1117.7456
+offset_right = 3060.333
+offset_bottom = 1335.7273
 page = 1.0
 value = 99.0
 script = ExtResource("4_gc0em")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 14.0
-offset_top = 139.0
-offset_right = 123.0
-offset_bottom = 162.0
+custom_minimum_size = Vector2(100, 100)
+offset_left = -370.0
+offset_top = 15.0
+offset_right = -261.0
+offset_bottom = 115.0
 text = "Music Volume"
+metadata/_edit_use_anchors_ = true
 
 [node name="menu" type="Button" parent="."]
-offset_left = 978.0
-offset_top = 9.0
-offset_right = 1140.0
-offset_bottom = 87.0
+custom_minimum_size = Vector2(250, 100)
+offset_left = 1255.0
+offset_top = -145.0
+offset_right = 1505.0
+offset_bottom = -45.0
 text = "Back to menu
 "
 script = ExtResource("3_71mqq")
+metadata/_edit_use_anchors_ = true
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="menu"]
 stream = ExtResource("4_3j6r5")
@@ -54,5 +61,82 @@ stream = ExtResource("3_3ykye")
 volume_db = -10.259
 autoplay = true
 script = ExtResource("5_cj1lu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -360.0
+offset_top = -64.0
+offset_right = -320.0
+offset_bottom = -24.0
+script = ExtResource("7_83j8s")
+metadata/_edit_use_anchors_ = true
+
+[node name="Borderless(okno bez ramki)" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.35
+anchor_top = -0.25
+anchor_right = 5.225
+anchor_bottom = 1.625
+offset_left = 225.0
+offset_top = 175.0
+offset_right = 318.0
+offset_bottom = 230.0
+text = "Borderless"
+metadata/_edit_use_anchors_ = true
+
+[node name="Windowed" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.575
+anchor_top = -0.275
+anchor_right = 3.45
+anchor_bottom = 1.6
+offset_left = 120.0
+offset_top = 175.0
+offset_right = 213.0
+offset_bottom = 230.0
+text = "Windowed
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Fullscreen" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.25
+anchor_top = -0.3
+anchor_right = 1.625
+anchor_bottom = 1.575
+offset_left = 15.0
+offset_top = 175.0
+offset_right = 108.0
+offset_bottom = 230.0
+text = "Fullscreen"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VSync Off" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = -176.0
+offset_top = 247.0
+offset_right = -7.0
+offset_bottom = 366.0
+text = "VSync on
+"
+
+[node name="Button" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = 1206.0
+offset_top = 725.0
+offset_right = 1395.0
+offset_bottom = 861.0
+text = "Our Telegram 
+Channel"
 
 [connection signal="pressed" from="menu" to="menu" method="_on_pressed"]

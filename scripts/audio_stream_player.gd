@@ -6,7 +6,7 @@ var default_value: float = 0.1
 
 func _ready():
 	# print("AudioStreamPlayer ready")
-	get_tree().get_root().add_child(self)
+	
 	
 	var _vol = ProjectSettings.get_setting(GLOBAL_VOLUME_SETTING, default_value)
 	player.volume_linear = _vol
