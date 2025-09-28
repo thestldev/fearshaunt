@@ -21,39 +21,47 @@ position = Vector2(962, 540.00006)
 scale = Vector2(1.0041667, 1.0055554)
 texture = ExtResource("2_70i5f")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 26.0
-offset_top = 612.0
-offset_right = 218.0
-offset_bottom = 701.0
-icon = ExtResource("3_mj5lg")
-
-[node name="Button" type="Button" parent="Button"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 183.0
-offset_right = 194.0
-offset_bottom = 272.0
-icon = ExtResource("4_ufwb2")
-
-[node name="Settings" type="Button" parent="Button/Button"]
-layout_mode = 0
-offset_left = -1.0
-offset_top = -95.0
-offset_right = 191.0
-offset_bottom = -6.0
-icon = ExtResource("5_6cdou")
-script = ExtResource("6_i42df")
-
-[node name="ClickSound" type="AudioStreamPlayer" parent="Button/Button/Settings"]
-stream = ExtResource("7_7jp70")
-volume_db = -8.588
-script = ExtResource("8_mxgkd")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_g6gyw")
 autoplay = true
 script = ExtResource("8_mxgkd")
 
-[connection signal="pressed" from="Button/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button/Button/Settings" to="Button/Button/Settings" method="_on_pressed"]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Exit" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 795.0
+offset_right = 224.0
+offset_bottom = 891.0
+icon = ExtResource("4_ufwb2")
+
+[node name="Settings" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 700.0
+offset_right = 219.0
+offset_bottom = 789.0
+icon = ExtResource("5_6cdou")
+script = ExtResource("6_i42df")
+
+[node name="cutscene" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 612.0
+offset_right = 218.0
+offset_bottom = 701.0
+icon = ExtResource("3_mj5lg")
+script = ExtResource("6_i42df")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_7jp70")
+volume_db = -8.588
+script = ExtResource("8_mxgkd")
+
+[connection signal="pressed" from="Control/Exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Settings" to="Control/Settings" method="_on_pressed"]

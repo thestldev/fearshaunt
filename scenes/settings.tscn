@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceuh05uv2ofav"]
+[gd_scene load_steps=10 format=3 uid="uid://ceuh05uv2ofav"]
 
 [ext_resource type="Texture2D" uid="uid://b48b7kxap77tj" path="res://assets/textures/settings.png" id="1_x2hje"]
 [ext_resource type="AudioStream" uid="uid://cymhp1cyjsjmn" path="res://assets/songs/my freaking dissociation - necronyx1.wav" id="3_3ykye"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://cxyuba3b0wyso" path="res://scripts/audiozvuki.gd" id="4_gc0em"]
 [ext_resource type="Script" uid="uid://3wcgisi0qyax" path="res://scripts/audio_stream_player.gd" id="5_cj1lu"]
 [ext_resource type="Script" uid="uid://dlwkg3370dic3" path="res://scripts/controlsettingssceneeslichto.gd" id="7_83j8s"]
+[ext_resource type="Script" uid="uid://eosvshaa7fmv" path="res://scripts/v_sync_button.gd" id="8_gjs24"]
+[ext_resource type="Script" uid="uid://dnwi6ce1nw31i" path="res://scripts/tg.gd" id="9_am25x"]
 
 [node name="Settings" type="Node2D"]
 position = Vector2(388, 176)
@@ -129,8 +131,9 @@ offset_right = -7.0
 offset_bottom = 366.0
 text = "VSync on
 "
+script = ExtResource("8_gjs24")
 
-[node name="Button" type="Button" parent="Control2"]
+[node name="Tg" type="Button" parent="Control2"]
 layout_mode = 0
 offset_left = 1206.0
 offset_top = 725.0
@@ -138,5 +141,6 @@ offset_right = 1395.0
 offset_bottom = 861.0
 text = "Our Telegram 
 Channel"
+script = ExtResource("9_am25x")
 
 [connection signal="pressed" from="menu" to="menu" method="_on_pressed"]

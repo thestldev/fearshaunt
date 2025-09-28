@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b26xh2rbgwrj0"]
+
+[ext_resource type="Texture2D" uid="uid://b48b7kxap77tj" path="res://assets/textures/settings.png" id="1_8oi6g"]
+
+[node name="Binds" type="Node2D"]
+
+[node name="Settings" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_8oi6g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
